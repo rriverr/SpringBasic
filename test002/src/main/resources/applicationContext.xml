@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="kr" class="test002.Korean" />
+	<bean id="en" class="test002.English" />
+
+	<bean id="myHello" class="test002.MyHello" />
+
+	<bean id="helloMaven" class="test002.HelloMaven">
+		<constructor-arg ref="myHello" />
+		<constructor-arg ref="kr" />
+		<constructor-arg ref="en" />
+	</bean>
+
+</beans>

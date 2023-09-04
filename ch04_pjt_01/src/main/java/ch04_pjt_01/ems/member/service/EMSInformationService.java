@@ -7,7 +7,7 @@ import java.util.Set;
 
 import ch04_pjt_01.ems.member.DBConnectionInfo;
 
-public class EMSInfomationService {
+public class EMSInformationService {
 
 	private String info;
 	private String copyRight;

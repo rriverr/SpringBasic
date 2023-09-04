@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<import resource="classpath:appCtx1.xml" />
+<import resource="classpath:appCtx2.xml" />
+<import resource="classpath:appCtx3.xml" />

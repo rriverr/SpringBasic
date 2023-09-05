@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<bean id="memberDao"
+class="test003.hanb.member.dao.MemberDAO" />
+
+<bean id="memberRegisterService" class="test003.hanb.member.service.MemberRegisterService">
+	<constructor-arg ref="memberDao"/>
+</bean>
+<bean id="memberModifyService" class="test003.hanb.member.service.MemberModifyService">
+	<constructor-arg ref="memberDao"/>
+</bean>
+<bean id="memberDeleteService" class="test003.hanb.member.service.MemberDeleteService">
+	<constructor-arg ref="memberDao"/>
+</bean>
+<bean id="memberSelectService" class="test003.hanb.member.service.MemberSelectService">
+	<constructor-arg ref="memberDao"/>
+</bean>
+<bean id="memberAllSelectService" class="test003.hanb.member.service.MemberAllSelectService">
+	<constructor-arg ref="memberDao"/>
+</bean>
+<bean id="printMemberInformationService" class="test003.hanb.member.service.PrintMemberInformationService">
+	<constructor-arg ref="memberAllSelectService" />
+</bean>
+
+
+
+
+</beans>

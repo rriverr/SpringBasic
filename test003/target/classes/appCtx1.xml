@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="initSampleData"
+		class="test003.hanb.utils.InitSampleData">
+		<property name="mIds">
+			<array>
+				<value>m001</value>
+				<value>m002</value>
+				<value>m003</value>
+			</array>
+		</property>
+		<property name="mPws">
+			<array>
+				<value>pw001</value>
+				<value>pw002</value>
+				<value>pw003</value>
+			</array>
+		</property>
+		<property name="mPhones">
+			<array>
+				<value>111-1111-1111</value>
+				<value>222-2222-2222</value>
+				<value>333-3333-3333</value>
+			</array>
+		</property>
+		<property name="mMails">
+			<array>
+				<value>aa@aaa.com</value>
+				<value>bb@bbb.com</value>
+				<value>cc@ccc.com</value>
+			</array>
+		</property>
+		<property name="mRegDays">
+			<array>
+				<value>2023.09.03</value>
+				<value>2023.09.03</value>
+				<value>2023.09.03</value>
+			</array>
+		</property>
+		<property name="mModDays">
+			<array>
+				<value>2023.09.03</value>
+				<value>2023.09.03</value>
+				<value>2023.09.03</value>
+			</array>
+		</property>
+	</bean>
+</beans>
+	

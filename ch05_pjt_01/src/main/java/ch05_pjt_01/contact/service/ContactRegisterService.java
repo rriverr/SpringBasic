@@ -38,7 +38,7 @@ public class ContactRegisterService {
 		this.contactDao = contactDao;
 	}
 	
-	
+
 	
 	public void register(ContactSet contactSet) {
 		String name = contactSet.getName();

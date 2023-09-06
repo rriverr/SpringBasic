@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="EMSInformation"
+		class="ch04_pjt_01.ems.member.service.EMSInformationService">
+		<!-- 
+		<property name="info"
+			value="Education Management System program was developed in 2022." />
+			아래처럼도 가능
+		 -->
+		<property name="info">
+			<value>Education Management System program was developed in 2022.</value>
+		</property>
+			
+		<property name="copyRight"
+			value="COPYRIGHT(C) 2022 EMS CO., LTD. ALL RIGHT RESERVED. CONTACT MASTER FOR MORE INFORMATION." />
+		<property name="ver" value="The version is 1.0" />
+		<property name="sYear" value="2022" />
+		<property name="sMonth" value="3" />
+		<property name="sDay" value="1" />
+		<property name="eYear" value="2022" />
+		<property name="eMonth" value="4" />
+		<property name="eDay" value="30" />
+		<property name="developers">
+			<list>
+			<!-- List는 무조건 이렇게 트리형식으로 상하관계를 표현한다. -->
+				<value>Cheney.</value>
+				<value>Eloy.</value>
+				<value>Jasper.</value>
+				<value>Dillon.</value>
+				<value>Kian</value>
+			</list>
+		</property>
+		<property name="administrators">
+		<!-- administrators는 Map형태 -->
+			<map>
+				<entry>
+					<key>
+						<value>Cheney</value>
+					</key>
+					<value>cheney@springPjt.org</value>
+				</entry>
+				<entry>
+					<key>
+						<value>Jasper</value>
+					</key>
+					<value>jasper@springPjt.org</value>
+				</entry>
+			</map>
+		</property>
+		<property name="dbInfors">
+		<!-- 
+		dbInfos도 Map형태지만 key는 String, value는 DBConnectionInfo라는 객체.
+		객체는 ref를 사용.
+		위에서 선언한 bean을 끌어와서 사용한다.
+		
+			ex) <bean id="dev_DBConnectionInfoDev"
+					  class="ch04_pjt_01.ems.member.DBConnectionInfo">
+					<property name="url" value="000.000.000.000" />
+					<property name="userId" value="admin" />
+					<property name="userPw" value="0000" />
+				</bean>
+		 -->
+			<map>
+				<entry>
+					<key>
+						<value>dev</value>
+					</key>
+					<ref bean="dev_DBConnectionInfoDev" />
+				</entry>
+				<entry>
+					<key>
+						<value>real</value>
+					</key>
+					<ref bean="real_DBConnectionInfo" />
+				</entry>
+			</map>
+			<!-- 
+				아래와 같은 형태로 나타난다. 
+				{"dev": dev_DBConnectionInfoDev}
+				이를 JAVA 코드로 변경하면 
+				DBConnectionInfo db = new DBConnectionInfo();
+				db.put("dev", new DBConnectionInfoDev);
+			 -->
+		</property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
